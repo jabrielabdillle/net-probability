@@ -1,0 +1,31 @@
+{
+  "season": "2026-27",
+  "exported_at": "2026-11-10T10:26:32",
+  "gw_range": [
+    1,
+    10
+  ],
+  "counts": {
+    "players": 672,
+    "clubs": 20,
+    "fixtures": 380,
+    "player_fixture_rows": 6562,
+    "shots": 2746,
+    "market_rows": 1062,
+    "season_stats_rows": 38751,
+    "history_rows": 2112,
+    "xp_rows": 25536,
+    "transfer_rows": 1902,
+    "club_stats_rows": 2440,
+    "player_folders": 672,
+    "csv_files": 4724
+  },
+  "sources": [
+    "fpl",
+    "reep",
+    "fbref",
+    "understat",
+    "transfermarkt",
+    "opta"
+  ]
+}
