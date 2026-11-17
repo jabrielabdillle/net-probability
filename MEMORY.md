@@ -8,3 +8,5 @@ Local source is not a Git checkout; GitHub connector tree/commit/ref APIs publis
 Source audit: pl-catalogue pinned at 5a9d2391d8cf1879a54c8a67bc25039c454479f0. Manifest exported 2026-11-10, reports 2,746 shots and GW1–10. Actual validation and model results pending. Data is third-party event data, not mock data; do not invent additional events. Provider rights and non-commercial attribution terms apply.
 
 Next: validate source, implement pipeline and tests, then dashboard and publication. No model metrics or deployment yet.
+
+M1 implementation: actual audit found 100 matches, 2,746 raw shots; excluded21 penalties +13 own goals. 2,712 modeled shots. Chronological train/validation/test counts1621/414/677. Boosting wins validation; logistic performs better on test, retained and documented. Python pipeline exports JSON/CSV/SQLite and portable logistic coefficients. See MODEL_CARD.md. Browser implementation in progress; not deployed.
