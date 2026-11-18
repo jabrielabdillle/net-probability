@@ -1,0 +1,4 @@
+export function geometry(x,y){const dx=(1-x)*105,dy=(y-.5)*68;return [Math.hypot(dx,dy),Math.atan2(7.32*dx,dx*dx+dy*dy-3.66**2)];}
+export function predict(model,shot){const nums=geometry(shot.x,shot.y);const vector=nums.map((v,i)=>(v-model.mean[i])/model.scale[i]);model.categorical.forEach((key,i)=>model.categories[i].forEach(c=>vector.push(shot[key]===c?1:0)));const z=model.intercept+vector.reduce((a,v,i)=>a+v*model.coef[i],0);return 1/(1+Math.exp(-z));}
+export function aggregate(rows,key){const map=new Map();for(const s of rows){const name=s[key];const a=map.get(name)||{name,shots:0,goals:0,xg:0};a.shots++;a.goals+=s.goal;a.xg+=s.model_xg;map.set(name,a);}return [...map.values()].sort((a,b)=>b.xg-a.xg);}
+export function csv(rows){if(!rows.length)return '';const keys=Object.keys(rows[0]);const cell=v=>'"'+String(v??'').replaceAll('"','""')+'"';return [keys,...rows.map(r=>keys.map(k=>r[k]))].map(r=>r.map(cell).join(',')).join('\n');}
