@@ -32,7 +32,7 @@ jobs:
         working-directory: web
       - run: npm run test:unit
         working-directory: web
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install chromium
         working-directory: web
       - run: npm test
         working-directory: web
