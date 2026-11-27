@@ -1,14 +1,17 @@
 # Project memory
 
-User chose Net Probability, repository net-probability, focused on 2026–27 Premier League. Existing workflow authorizes public repo, free hosting, milestone PRs and merges. No extra confirmation needed for routine implementation.
+Net Probability: Premier League 2026–27 shot quality and xG research.
+Repository: https://github.com/jabrielabdillle/net-probability
+Live: https://jabrielabdillle.github.io/net-probability/
 
-Repository created: https://github.com/jabrielabdillle/net-probability
-Local source is not a Git checkout; GitHub connector tree/commit/ref APIs publish milestone files because local git requires unavailable xcrun.
+User authorized public repo, free hosting, milestone commits, PRs and merges after checks. M0 blueprint merged in PR #1; M1 pipeline in PR #2; M2 dashboard in PR #3. M3 documentation records verified publication, maintenance and interview guidance.
 
-Source audit: pl-catalogue pinned at 5a9d2391d8cf1879a54c8a67bc25039c454479f0. Manifest exported 2026-11-10, reports 2,746 shots and GW1–10. Actual validation and model results pending. Data is third-party event data, not mock data; do not invent additional events. Provider rights and non-commercial attribution terms apply.
+Source: pl-catalogue / Understat, pinned at 5a9d2391d8cf1879a54c8a67bc25039c454479f0. Export dated 2026-11-10, covers gameweeks1–10 through November8. 2,746 raw shots /100 matches; 21 penalties and13 own goals excluded, leaving2,712 modeled shots. This is a third-party partial-season snapshot, not an official or live feed. Non-commercial attribution and provider terms apply.
 
-Next: validate source, implement pipeline and tests, then dashboard and publication. No model metrics or deployment yet.
+Whole-date chronological training/validation/test:1,621/414/677 shots. Boosting selected on validation; logistic is better on test. Do not select again based on test results. Explorer uses boosting; probability lab explicitly uses logistic. No tracking features or provider xG inputs.
 
-M1 implementation: actual audit found 100 matches, 2,746 raw shots; excluded21 penalties +13 own goals. 2,712 modeled shots. Chronological train/validation/test counts1621/414/677. Boosting wins validation; logistic performs better on test, retained and documented. Python pipeline exports JSON/CSV/SQLite and portable logistic coefficients. See MODEL_CARD.md. Browser implementation in progress; not deployed.
+Validation:10 Python,3 JavaScript and7 Playwright checks passed locally and in CI. All-shot Python/JS logistic parity within1e-8. Screenshots reviewed at desktop/mobile; responsive checks cover320–1440px. Taste gate ERROR and build-time dependency advisory are in docs/DESIGN.md; do not claim a gate pass.
 
-M1 merged as PR #2 after CI passed. M2 browser validation complete: 7 Playwright checks passed; 3 JavaScript tests passed including all-shot sklearn parity within1e-8. Desktop/mobile screenshots reviewed. Pages source is configured as GitHub Actions. Dashboard PR and live deployment remain to finish. Taste gate ERROR is documented in docs/DESIGN.md.
+Pages deployment run44254329013 succeeded. On2026-11-27 public overview and SQLite verified:2,712 total and677 held-out test rows. Browser CI uses Ubuntu24.04 and installs Chromium without redundant system package upgrades.
+
+Local source is not a Git checkout. GitHub connector tree/commit/ref APIs publish changes; local Git lacked xcrun. Future changes must start from current remote main, retain source provenance and use tested PRs. No paid services or secrets required. See docs/DEPLOYMENT.md and docs/INTERVIEW_GUIDE.md.
