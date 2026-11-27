@@ -11,3 +11,6 @@ Shot map, team/player/match filters, probability inspection, comparisons, held-o
 
 ## M3 — publication and explanation
 Free Pages deployment, live smoke checks, interview guide, supported resume claims, final memory. Every milestone has commit, PR and authorized merge after checks.
+
+## Completion
+M0, M1 and M2 merged in PRs #1–#3. M3: Pages deployment succeeded and live overview/SQLite verified on 2026-11-27. Documentation and interview guide complete in the publication milestone PR. See docs/VALIDATION.md.
